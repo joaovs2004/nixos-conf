@@ -170,7 +170,9 @@
       "float,class:^(qt6ct)$"
       "float,class:^(pavucontrol)$"
       "float,class:^(org.gnome.Calculator)$"
+      "float,class:^(xdg-desktop-portal-gtk)$"
       "size 360 616,class:^(org.gnome.Calculator)$"
+      "size 1367 754,class:^(xdg-desktop-portal-gtk)$"
     ];
   };
 }
