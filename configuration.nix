@@ -11,8 +11,11 @@
     ];
 
   # Bootloader.
+  boot.loader.systemd-boot.enable = false;
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
+  boot.loader.grub.useOSProber = true;
+  boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Edid modified to use correct pixel format in AMD, see more on https://www.wezm.net/v2/posts/2020/linux-amdgpu-pixel-format/
@@ -87,11 +90,16 @@
     distrobox
   ];
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = 1;
+  };
+
   # rtkit is optional but recommended
   security.rtkit.enable = true;
 
   programs.hyprland = {
     enable = true;
+    package = pkgs.unstable.hyprland;
     xwayland.enable = true;
   };
 
@@ -104,8 +112,17 @@
   # };
 
   programs.zsh.enable = true;
+  programs.zsh.shellAliases = {
+    dev = "distrobox enter ubuntu";
+    rebuild = "sudo nixos-rebuild switch --flake .#jvs";
+  };
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
+
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
 
   # List services that you want to enable:
 
@@ -137,13 +154,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11";
 
   nix = {
     package = pkgs.nixVersions.stable;

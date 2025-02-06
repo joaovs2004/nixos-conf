@@ -8,6 +8,8 @@
     "env" = [
       "QT_QPA_PLATFORM,wayland"
       "QT_QPA_PLATFORMTHEME,qt5ct"
+      "QT_STYLE_OVERRIDE=kvantum"
+      "ELECTRON_OZONE_PLATFORM_HINT,wayland"
     ];
 
     exec-once = [
@@ -42,10 +44,20 @@
       gaps_in = 2;
       gaps_out = 3;
       border_size = 2;
-      "col.active_border" = "rgb(4c566a)";
-      "col.inactive_border" = "rgb(2c3033)";
+      "col.active_border" = "rgb(393939)";
+      "col.inactive_border" = "rgb(191919)";
       layout = "dwindle";
       resize_on_border = true;
+    };
+
+    group = {
+      "col.border_active" = "rgb(393939)";
+      "col.border_inactive" = "rgb(191919)";
+
+      groupbar = {
+        "col.active" = "rgb(4c4c4c)";
+        "col.inactive" = "rgb(262626)";
+      };
     };
 
     decoration = {
@@ -53,11 +65,11 @@
 
       blur = {
         enabled = "yes";
-	size = 10;
-	passes = 3;
-	new_optimizations = "on";
-	ignore_opacity = "on";
-	xray = false;
+        size = 10;
+        passes = 3;
+        new_optimizations = "on";
+        ignore_opacity = "on";
+        xray = false;
       };
     };
 
@@ -75,7 +87,7 @@
     };
 
     misc = {
-      vrr = 0;
+      vrr = 1;
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
       force_default_wallpaper = 0;
@@ -92,13 +104,13 @@
       ];
       animation = [
         "windows, 1, 6, wind, slide"
-	"windowsOut, 1, 5, winOut, slide"
-	"windowsIn, 1, 6, winIn, slide"
-	"windowsMove, 1, 5, wind, slide"
-	"border, 1, 1, liner"
-	"borderangle, 1, 30, liner, loop"
+        "windowsOut, 1, 5, winOut, slide"
+        "windowsIn, 1, 6, winIn, slide"
+        "windowsMove, 1, 5, wind, slide"
+        "border, 1, 1, liner"
+        "borderangle, 1, 30, liner, loop"
         "fade, 1, 10, default"
-	"workspaces, 1, 5, wind"
+        "workspaces, 1, 5, wind"
       ];
     };
 
@@ -106,6 +118,8 @@
       "$mod, Q, killactive"
       "$mod, W, togglefloating"
       "$mod, G, togglegroup"
+      "$mod, Tab, changegroupactive, f"
+      "$mod SHIFT, Tab, changegroupactive, b"
       "ALT, return, fullscreen"
       "$mod SHIFT, S, exec, hyprshot -m region --clipboard-only"
       "$mod, B, exec, $browser"
@@ -131,10 +145,10 @@
     ] ++ (
       builtins.concatLists (builtins.genList (i:
         let ws = i + 1;
-	in [
-	  "$mod, code:1${toString i}, workspace, ${toString ws}"
-	  "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-	]
+        in [
+        "$mod, code:1${toString i}, workspace, ${toString ws}"
+        "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+        ]
         )
       9)
     );
@@ -155,6 +169,8 @@
       "float,class:^(qt5ct)$"
       "float,class:^(qt6ct)$"
       "float,class:^(pavucontrol)$"
+      "float,class:^(org.gnome.Calculator)$"
+      "size 360 616,class:^(org.gnome.Calculator)$"
     ];
   };
 }

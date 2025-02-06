@@ -4,52 +4,62 @@
   programs.wofi = {
     enable = true;
     style = ''
-    * {
-      font-family: "Hack", monospace;
-    }
+      window {
+        margin: 0px;
+        border: 2px solid #191919;
+        border-radius: 5px;
+        background-color: #0f0f0f;
+        font-family: monospace;
+        font-size: 12px;
+      }
 
-    window {
-      background-color: #3B4252;
-    }
+      #input {
+        margin: 5px;
+        border: 1px solid #4c4c4c;
+        color: #bfbfbf;
+        background-color: #0f0f0f;
+      }
 
-    #input {
-	margin: 5px;
-	border-radius: 0px;
-	border: none;
-	background-color: #3B4252;
-	color: white;
-}
+      #input:focus {
+        border-color: #8a98ac#
+      }
 
-#inner-box {
-	background-color: #383C4A;
-}
+      #input image {
+        color: #bfbfbf;
+      }
 
-#outer-box {
-	margin: 2px;
-	padding: 10px;
-	background-color: #383C4A;
-}
+      #inner-box {
+        margin: 5px;
+        border: none;
+        background-color: #0f0f0f;
+      }
 
-#scroll {
-	margin: 5px;
-}
+      #outer-box {
+        margin: 5px;
+        border: none;
+        background-color: #0f0f0f;
+      }
 
-#text {
-	padding: 4px;
-	color: white;
-}
+      #scroll {
+        margin: 0px;
+        border: none;
+      }
 
-#entry:nth-child(even){
-	background-color: #404552;
-}
+      #text {
+        margin: 5px;
+        border: none;
+        color: #e7e7e7;
+      }
 
-#entry:selected {
-	background-color: #4C566A;
-}
+      #entry:selected {
+        background-color: #4c4c4c;
+        font-weight: normal;
+      }
 
-#text:selected {
-	background: transparent;
-}
+      #text:selected {
+        background-color: #4c4c4c;
+        font-weight: normal;
+      }
     '';
 
   };

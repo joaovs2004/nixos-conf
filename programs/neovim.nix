@@ -5,6 +5,7 @@
     enable = true;
     extraPackages = with pkgs; [
       wl-clipboard
+      lua
       unzip
       python3
       nodejs

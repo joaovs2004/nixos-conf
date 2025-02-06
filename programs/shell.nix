@@ -14,8 +14,9 @@
         };
       }
     ];
+    completionInit = "autoload -Uz compinit && compinit\nzstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'";
   };
-
+  
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
