@@ -15,7 +15,7 @@
 
       background = "#0f0f0f";
       foreground = "#f0f0f0";
-      selection_foreground = "#262626";
+      selection_foreground = "#4c4c4c";
       selection_background= "#f0f0f0";
       url_color = "#c6a679";
 

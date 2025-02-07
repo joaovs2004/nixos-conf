@@ -58,9 +58,12 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "intl";
+  services.xserver = {
+    xkb = {
+      layout = "us,us";
+      variant = ",intl";
+      options = "grp:win_space_toggle";
+    };
   };
 
   # Configure console keymap

@@ -33,9 +33,9 @@
     gnome-calculator
     libsForQt5.qt5ct
     libsForQt5.qtstyleplugin-kvantum
+    git
   ];
 
-  programs.git.enable = true;
   programs.vscode.enable = true;
 
   programs.chromium = {

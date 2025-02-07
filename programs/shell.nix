@@ -15,6 +15,7 @@
       }
     ];
     completionInit = "autoload -Uz compinit && compinit\nzstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'";
+    initExtra = "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#4c4c4c'";
   };
   
   programs.starship = {

@@ -31,8 +31,9 @@
     "$browser" = "brave --ozone-platform-hint=auto";
 
     input = {
-      kb_layout = "us";
-      kb_variant = "intl";
+      kb_layout = "us,us";
+      kb_variant = ",intl";
+      kb_options = "grp:win_space_toggle";
       follow_mouse = 1;
       sensitivity = -0.5;
       force_no_accel = 1;
@@ -159,7 +160,7 @@
     ];
 
     windowrulev2 = [
-      "opacity 0.90 0.90,class:^(Code)$"
+      "opacity 0.90 0.90,class:^(code)$"
       "opacity 0.90 0.90,class:^(thunar)$"
       "opacity 0.90 0.90,class:^(kitty)$"
       "opacity 0.90 0.90,class:^(discord)$"
