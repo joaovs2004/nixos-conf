@@ -5,6 +5,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +22,7 @@
 
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, hyprpanel, nixpkgs-unstable, ... }:
+  outputs = inputs @ { nixpkgs, home-manager, hyprpanel, nixpkgs-unstable, nixvim, ... }:
     let
       system = "x86_64-linux";
 
@@ -43,8 +48,8 @@
 
 			    modules = [
             {nixpkgs.overlays = [
-                inputs.hyprpanel.overlay
                 overlay-unstable
+                hyprpanel.overlay
               ];
             }
 				    ./configuration.nix
@@ -53,6 +58,8 @@
 					    home-manager.useUserPackages = true;
 					    home-manager.users.jvs = {
 						    imports = [
+                  nixvim.homeManagerModules.nixvim
+                  hyprpanel.homeManagerModules.hyprpanel
 							    ./home.nix
 						    ];
 					    };

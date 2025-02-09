@@ -26,7 +26,7 @@ return {
     dependencies = { "neovim/nvim-lspconfig" },
     cmd = "LoadDockerEnv",
     opts = {
-      binary_mapping_strategy = "inspect_lspconfig",
+      -- binary_mapping_strategy = "inspect_lspconfig",
     }
   },
 

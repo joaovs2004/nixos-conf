@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs,  ... }:
 
 {
   home.username = "jvs";
@@ -10,15 +10,15 @@
   imports = [
     ./programs/shell.nix
     ./programs/wofi.nix
-    ./programs/neovim.nix
     ./programs/kitty.nix
+    ./programs/neovim.nix
+    ./programs/hyprpanel.nix
     ./hyprland/conf.nix
   ];
 
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-    hyprpanel
     fira-code
     fira-code-nerdfont
     noto-fonts
@@ -44,8 +44,8 @@
   };
 
   home.pointerCursor = {
-    package = pkgs.simp1e-cursors;
-    name = "Simp1e-Dark";
+    package = pkgs.quintom-cursor-theme;
+    name = "Quintom_Ink";
     size = 24;
   };
 
@@ -56,8 +56,8 @@
       name = "Cantarell";
     };
     cursorTheme = {
-      package = pkgs.simp1e-cursors;
-      name = "Simp1e-Dark";
+      package = pkgs.quintom-cursor-theme;
+      name = "Quintom_Ink";
     };
     theme = {
       package = (pkgs.orchis-theme.override  { tweaks = ["black"]; });
@@ -76,20 +76,12 @@
   };
 
   home.file = {
-    "/home/jvs/.config/nvim" = {
-      source = ./programs/nvim;
-      recursive = true;
-    };
     "/home/jvs/.config/Kvantum" = {
       source = ./programs/Kvantum;
       recursive = true;
     };
     "/home/jvs/.config/Insomnia/plugins/imsonmnia-plugin-mountain" = {
       source = ./programs/imsonmnia-plugin-mountain;
-      recursive = true;
-    };
-    "/home/jvs/.config/hyprpanel" = {
-      source = ./programs/hyprpanel;
       recursive = true;
     };
   };

@@ -1,10 +1,12 @@
 {config, pkgs, ...}:
 
 {
-  programs.neovim = {
+  programs.nixvim = {
     enable = true;
+
     extraPackages = with pkgs; [
       wl-clipboard
+      ripgrep
       lua
       unzip
       python3
