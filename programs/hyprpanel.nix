@@ -26,7 +26,8 @@
       bar.clock.format = "%a %b %d  %H:%M";
       bar.launcher.icon = "";
       bar.workspaces.show_numbered = true;
-      bar.media.show_active_only = true;
+      bar.media.show_active_only = false;
+      bar.network.label = false;
 
       menus.clock = {
         time = {
@@ -52,7 +53,7 @@
       };
 
       wallpaper.enable = true;
-      wallpaper.image = "/home/jvs/Imagens/wallpaper.jpg";
+      wallpaper.image = "/home/jvs/Imagens/wallhaven.png";
     };
   };
 }

@@ -5,8 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
+    nvchad4nix = {
+      url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -22,7 +22,7 @@
 
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, hyprpanel, nixpkgs-unstable, nixvim, ... }:
+  outputs = inputs @ { nixpkgs, home-manager, hyprpanel, nixpkgs-unstable, nvchad4nix, ... }:
     let
       system = "x86_64-linux";
 
@@ -58,7 +58,7 @@
 					    home-manager.useUserPackages = true;
 					    home-manager.users.jvs = {
 						    imports = [
-                  nixvim.homeManagerModules.nixvim
+                  nvchad4nix.homeManagerModule
                   hyprpanel.homeManagerModules.hyprpanel
 							    ./home.nix
 						    ];

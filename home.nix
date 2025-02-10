@@ -34,6 +34,7 @@
     libsForQt5.qt5ct
     libsForQt5.qtstyleplugin-kvantum
     git
+    neovide
   ];
 
   programs.vscode.enable = true;
