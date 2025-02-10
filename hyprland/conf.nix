@@ -165,6 +165,7 @@
       "opacity 0.90 0.90,class:^(kitty)$"
       "opacity 0.90 0.90,class:^(discord)$"
       "opacity 0.90 0.90,class:^(Insomnia)$"
+      "opacity 0.90 0.90,class:^(neovide)$"
       "float,title:^(Picture-in-Picture)$"
       "float,class:^(kvantummanager)$"
       "float,class:^(qt5ct)$"
@@ -172,8 +173,10 @@
       "float,class:^(pavucontrol)$"
       "float,class:^(org.gnome.Calculator)$"
       "float,class:^(xdg-desktop-portal-gtk)$"
+      "float,title:^(Open Folder)$,class:^(code)$"
       "size 360 616,class:^(org.gnome.Calculator)$"
       "size 1367 754,class:^(xdg-desktop-portal-gtk)$"
+      "size 1367 754,title:^(Open Folder)$,class:^(code)$"
     ];
   };
 }

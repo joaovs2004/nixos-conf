@@ -32,10 +32,21 @@
     hyprshot
     gnome-calculator
     libsForQt5.qt5ct
+    libsForQt5.ark
     libsForQt5.qtstyleplugin-kvantum
+    lazygit
     git
     neovide
+    fd
   ];
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    options = [
+      "--cmd cd"
+    ];
+  };
 
   programs.vscode.enable = true;
 
