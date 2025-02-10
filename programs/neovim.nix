@@ -24,10 +24,33 @@
           dependencies = { "neovim/nvim-lspconfig" },
           cmd = "LoadDockerEnv",
           opts = {}
+        },
+        {
+          "kdheepak/lazygit.nvim",
+          lazy = true,
+          cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+          },
+          -- optional for floating window border decoration
+            dependencies = {
+              "nvim-lua/plenary.nvim",
+            },
+          -- setting the keybinding for LazyGit with 'keys' is recommended in
+          -- order to load the plugin when the command is run for the first time
+          keys = {
+            { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+          }
         }
       }
     '';
     extraConfig = ''
+      local o = vim.o
+      o.relativenumber = true
+
       local map = vim.keymap.set
       map("n", "<leader>a", "ggVG")
       map("n", "<leader>i", function()
@@ -37,6 +60,13 @@
       if vim.g.neovide then
         vim.o.guifont = "Fira Code:h12"
         vim.g.neovide_cursor_animation_length = 0
+        vim.g.neovide_hide_mouse_when_typing = true
+        vim.api.nvim_set_keymap('v', '<sc-c>', '"+y', {noremap = true})
+        vim.api.nvim_set_keymap('n', '<sc-v>', 'l"+P', {noremap = true})
+        vim.api.nvim_set_keymap('v', '<sc-v>', '"+P', {noremap = true})
+        vim.api.nvim_set_keymap("c", "<sc-v>", "<C-R>0", { noremap = true })
+        vim.api.nvim_set_keymap('i', '<sc-v>', '"+p', {noremap = true})
+        vim.api.nvim_set_keymap('t', '<sc-v>', '<C-\\><C-n>"+p', {noremap = true})
       end
     '';
     chadrcConfig = ''
@@ -58,6 +88,9 @@
         },
         statusline = {
           theme = "vscode_colored"
+        },
+        telescope = {
+          style = "bordered"
         }
       }
 
