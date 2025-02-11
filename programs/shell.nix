@@ -3,21 +3,13 @@
 {
   programs.zsh = {
     enable = true;
-    plugins = [
-      {
-        name = "zsh-autosuggestions";
-	      src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-autosuggestions";
-          rev = "v0.4.0";
-          sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
-        };
-      }
-    ];
-    completionInit = "autoload -Uz compinit && compinit\nzstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'";
-    initExtra = "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#4c4c4c'";
+    autosuggestion = {
+      enable = true;
+      highlight = "fg=#4c4c4c";
+    };
+    oh-my-zsh.enable = true;
   };
-  
+
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
