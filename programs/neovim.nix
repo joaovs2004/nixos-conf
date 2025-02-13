@@ -61,12 +61,13 @@
         vim.o.guifont = "Fira Code:h12"
         vim.g.neovide_cursor_animation_length = 0
         vim.g.neovide_hide_mouse_when_typing = true
-        vim.api.nvim_set_keymap('v', '<sc-c>', '"+y', {noremap = true})
-        vim.api.nvim_set_keymap('n', '<sc-v>', 'l"+P', {noremap = true})
-        vim.api.nvim_set_keymap('v', '<sc-v>', '"+P', {noremap = true})
-        vim.api.nvim_set_keymap("c", "<sc-v>", "<C-R>0", { noremap = true })
-        vim.api.nvim_set_keymap('i', '<sc-v>', '"+p', {noremap = true})
-        vim.api.nvim_set_keymap('t', '<sc-v>', '<C-\\><C-n>"+p', {noremap = true})
+        vim.api.nvim_set_keymap('n', '<C-S-V>', '"+p', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('i', '<C-S-V>', '<C-R>+', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('v', '<C-S-V>', '"+p', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('c', '<C-S-V>', '<C-R>+', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', '<C-S-C>', '"+y', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('v', '<C-S-C>', '"+y', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('c', '<C-S-C>', '<C-R>+', { noremap = true, silent = true })
       end
     '';
     chadrcConfig = ''

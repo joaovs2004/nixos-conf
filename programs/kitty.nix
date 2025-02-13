@@ -5,12 +5,11 @@
     enable = true;
     font.name = "Fira Code";
     font.size = 12;
+    shellIntegration.mode = "no-cursor";
 
     settings = {
+      cursor_shape = "block";
       enable_audio_bell = false;
-      # Cursor settings
-      # cursor = "#f0f0f0";
-      # cursor_text_color = "#ffffff";
       window_padding_width = 1.0;
 
       background = "#0f0f0f";

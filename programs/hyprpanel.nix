@@ -53,7 +53,7 @@
       };
 
       wallpaper.enable = true;
-      wallpaper.image = "/home/jvs/Imagens/wallhaven.png";
+      wallpaper.image = "/home/jvs/Imagens/wallpaper.png";
     };
   };
 }

@@ -38,6 +38,8 @@
     git
     neovide
     fd
+    satty
+    wl-clip-persist
   ];
 
   programs.zoxide = {

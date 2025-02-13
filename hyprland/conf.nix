@@ -14,6 +14,7 @@
 
     exec-once = [
       "hyprpanel"
+      "wl-clip-persist --clipboard regular"
     ];
 
     xwayland = {
@@ -122,7 +123,7 @@
       "$mod, Tab, changegroupactive, f"
       "$mod SHIFT, Tab, changegroupactive, b"
       "ALT, return, fullscreen"
-      "$mod SHIFT, S, exec, hyprshot -m region --clipboard-only"
+      "$mod SHIFT, S, exec, hyprshot -m region -s --raw | satty -f -  -o '/home/jvs/Imagens/screenshots/%F_%H-%M.png'"
       "$mod, B, exec, $browser"
       "$mod, T, exec, $term"
       "$mod, E, exec, $file"
