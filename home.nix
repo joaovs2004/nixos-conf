@@ -40,6 +40,9 @@
     fd
     satty
     wl-clip-persist
+    htop
+    vlc
+    loupe
   ];
 
   programs.zoxide = {
