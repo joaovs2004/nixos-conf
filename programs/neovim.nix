@@ -44,7 +44,7 @@
           keys = {
             { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
           }
-        }
+        },
       }
     '';
     extraConfig = ''
@@ -68,6 +68,23 @@
         vim.api.nvim_set_keymap('n', '<C-S-C>', '"+y', { noremap = true, silent = true })
         vim.api.nvim_set_keymap('v', '<C-S-C>', '"+y', { noremap = true, silent = true })
         vim.api.nvim_set_keymap('c', '<C-S-C>', '<C-R>+', { noremap = true, silent = true })
+
+        vim.g.terminal_color_0 = "#4c4c4c";
+        vim.g.terminal_color_1 = "#ac8a8c";
+        vim.g.terminal_color_2 = "#8aac8b";
+        vim.g.terminal_color_3 = "#aca98a";
+        vim.g.terminal_color_4 = "#8f8aac";
+        vim.g.terminal_color_5 = "#ac8aac";
+        vim.g.terminal_color_6 = "#8aacab";
+        vim.g.terminal_color_7 = "#f0f0f0";
+        vim.g.terminal_color_8 = "#4c4c4c";
+        vim.g.terminal_color_9 = "#c49ea0";
+        vim.g.terminal_color_10 = "#9ec49f";
+        vim.g.terminal_color_11 = "#c4c19e";
+        vim.g.terminal_color_12 = "#a39ec4";
+        vim.g.terminal_color_13 = "#c49ec4";
+        vim.g.terminal_color_14 = "#9ec3c4";
+        vim.g.terminal_color_15 = "#e7e7e7";
       end
     '';
     chadrcConfig = ''

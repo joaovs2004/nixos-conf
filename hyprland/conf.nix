@@ -175,9 +175,11 @@
       "float,class:^(org.gnome.Calculator)$"
       "float,class:^(xdg-desktop-portal-gtk)$"
       "float,title:^(Open Folder)$,class:^(code)$"
+      "float,class:^(org.gnome.Loupe)$"
       "size 360 616,class:^(org.gnome.Calculator)$"
       "size 1367 754,class:^(xdg-desktop-portal-gtk)$"
       "size 1367 754,title:^(Open Folder)$,class:^(code)$"
+      "size 1375 804,class:^(org.gnome.Loupe)$"
     ];
   };
 }
