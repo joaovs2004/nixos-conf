@@ -36,7 +36,6 @@
     libsForQt5.qtstyleplugin-kvantum
     lazygit
     git
-    neovide
     fd
     satty
     wl-clip-persist

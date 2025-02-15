@@ -118,7 +118,6 @@
   programs.zsh.shellAliases = {
     dev = "distrobox enter ubuntu";
     rebuild = "sudo nixos-rebuild switch --flake .#jvs";
-    neovide = "neovide & disown";
   };
   programs.thunar.enable = true;
   programs.xfconf.enable = true;

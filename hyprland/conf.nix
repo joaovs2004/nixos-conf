@@ -166,7 +166,6 @@
       "opacity 0.90 0.90,class:^(kitty)$"
       "opacity 0.90 0.90,class:^(discord)$"
       "opacity 0.90 0.90,class:^(Insomnia)$"
-      "opacity 0.90 0.90,class:^(neovide)$"
       "float,title:^(Picture-in-Picture)$"
       "float,class:^(kvantummanager)$"
       "float,class:^(qt5ct)$"
