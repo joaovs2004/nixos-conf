@@ -21,7 +21,7 @@
       force_zero_scaling = true;
     };
 
-    "layerrule" = "blur,waybar";
+    "layerrule" = "blur,bar-0";
 
     "$mod" = "SUPER";
     "$terminal" = "kitty";
