@@ -31,7 +31,7 @@ fi
 
 if ! is_installed python3; then
   echo "Installing Python3..."
-  sudo apt install -y python3 python3-pip
+  sudo apt install -y python3 python3-pip python3.12-venv
 else
   echo "Python3 is already installed."
 fi
@@ -43,9 +43,9 @@ else
   echo "Node.js is already installed."
 fi
 
-if ! is_installed rustc; then
+if ! is_installed rustup; then
   echo "Installing Rust..."
-  sudo apt install -y rustc
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 else
   echo "Rust is already installed."
 fi
@@ -82,18 +82,17 @@ else
   echo "Starship is already installed."
 fi
 
-# Add Starship initialization to Zsh configuration if not already added
-if ! grep -q 'starship init zsh' ~/.zshrc; then
-  echo "Configuring Starship in Zsh..."
-  echo 'eval "$(starship init zsh)"' >> ~/.zshrc
-else
-  echo "Starship is already configured in .zshrc."
-fi
-
+mkdir ~/.config/
 cp ./starship.toml ~/.config/
 cp ./exportador ~/
 
-echo "Applying changes..."
-source ~/.zshrc
+{
+  echo 'export ZSH="$HOME/.oh-my-zsh"'
+  echo 'ZSH_THEME="robbyrussell"'
+  echo 'plugins=(git zsh-autosuggestions)'
+  echo 'source $ZSH/oh-my-zsh.sh'
+  echo 'eval "$(starship init zsh)"'
+  echo 'echo "export LC_ALL=en_US.UTF-8"'
+} >> ~/.zshrc
 
 echo "Installation complete! Please restart your terminal for changes to take effect."
