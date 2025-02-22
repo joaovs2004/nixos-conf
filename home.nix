@@ -96,9 +96,5 @@
       source = ./programs/Kvantum;
       recursive = true;
     };
-    "/home/jvs/.config/Insomnia/plugins/imsonmnia-plugin-mountain" = {
-      source = ./programs/imsonmnia-plugin-mountain;
-      recursive = true;
-    };
   };
 }
