@@ -12,6 +12,7 @@
       gnumake
       vtsls
       vscode-langservers-extracted
+      rust-analyzer
     ];
 
     hm-activation = true;
