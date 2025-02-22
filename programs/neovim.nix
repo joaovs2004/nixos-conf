@@ -10,9 +10,8 @@
       lua
       gcc
       gnumake
-      vtsls
+      unstable.vtsls
       vscode-langservers-extracted
-      rust-analyzer
     ];
 
     hm-activation = true;

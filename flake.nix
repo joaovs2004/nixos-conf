@@ -18,7 +18,6 @@
     hyprpanel = {
       url = "github:jas-singhfsu/hyprpanel";
     };
-
   };
 
   outputs = inputs @ { nixpkgs, home-manager, hyprpanel, nixpkgs-unstable, nvchad4nix, ... }:
