@@ -8,14 +8,14 @@
       wl-clipboard
       ripgrep
       lua
-      unzip
-      python3
-      nodejs
       gcc
       gnumake
+      vtsls
+      vscode-langservers-extracted
     ];
 
     hm-activation = true;
+    backup = false;
 
     extraPlugins = ''
       return {
@@ -56,12 +56,27 @@
       map("n", "<leader>i", function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}),{0})
       end)
+
+      local on_attach = require("nvchad.configs.lspconfig").on_attach
+      local on_init = require("nvchad.configs.lspconfig").on_init
+      local capabilities = require("nvchad.configs.lspconfig").capabilities
+
+      local lspconfig = require "lspconfig"
+      local servers = { "html", "cssls", "vtsls"  }
+
+      for _, lsp in ipairs(servers) do
+        lspconfig[lsp].setup {
+          on_attach = on_attach,
+          on_init = on_init,
+          capabilities = capabilities,
+        }
+      end
     '';
     chadrcConfig = ''
       local M = {}
 
       M.base46 = {
-        theme = "mountain",
+        theme = "kanagawa-dragon",
 
         -- hl_override = {
         -- 	Comment = { italic = true },
@@ -69,7 +84,6 @@
         -- },
       }
 
-      M.nvdash = { load_on_startup = true }
       M.ui = {
         tabufline = {
           lazyload = false
