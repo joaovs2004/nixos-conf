@@ -3,7 +3,6 @@
 (pkgs.buildFHSEnv {
   name = "dev-shell";
   targetPkgs = pkgs: (with pkgs; [
-    udev
     alsa-lib
     python3
     nodejs
@@ -11,10 +10,14 @@
     cargo
     gcc
     alsa-lib.dev
-    udev
+    libudev-zero
+    libxkbcommon
+    vulkan-loader
   ]) ++ (with pkgs.xorg; [
     libX11
     libXcursor
+    libXrandr
+    libXi
     libXrandr
   ]);
   multiPkgs = pkgs: (with pkgs; [

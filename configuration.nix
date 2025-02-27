@@ -117,7 +117,7 @@
 
   programs.zsh.enable = true;
   programs.zsh.shellAliases = {
-    dev = "nix-shell ~/flake/dev-shell.nix --run zsh";
+    dev = "nix-shell ~/flake/dev-shell.nix";
     rebuild = "sudo nixos-rebuild switch --flake .#jvs";
   };
   programs.thunar.enable = true;

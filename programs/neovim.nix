@@ -12,6 +12,7 @@
       gnumake
       unstable.vtsls
       vscode-langservers-extracted
+      pyright
     ];
 
     hm-activation = true;
@@ -62,7 +63,7 @@
       local capabilities = require("nvchad.configs.lspconfig").capabilities
 
       local lspconfig = require "lspconfig"
-      local servers = { "html", "cssls", "vtsls"  }
+      local servers = { "html", "cssls", "vtsls", "pyright"}
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
