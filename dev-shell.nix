@@ -10,6 +10,8 @@
     rustc
     cargo
     gcc
+    alsa-lib.dev
+    udev
   ]) ++ (with pkgs.xorg; [
     libX11
     libXcursor

@@ -39,7 +39,7 @@
     fd
     satty
     wl-clip-persist
-    htop
+    btop
     vlc
     loupe
   ];
@@ -56,7 +56,7 @@
 
   programs.chromium = {
     enable = true;
-    package = pkgs.brave;
+    package = pkgs.unstable.brave;
   };
 
   home.pointerCursor = {
