@@ -44,8 +44,8 @@
 
     general = {
       gaps_in = 2;
-      gaps_out = 3;
-      border_size = 2;
+      gaps_out = 5;
+      border_size = 1;
       "col.active_border" = "rgb(393939)";
       "col.inactive_border" = "rgb(191919)";
       layout = "dwindle";
@@ -161,6 +161,7 @@
     ];
 
     windowrulev2 = [
+      "noborder, onworkspace:w[t1]"
       "opacity 0.90 0.90,class:^(code)$"
       "opacity 0.90 0.90,class:^(thunar)$"
       "opacity 0.90 0.90,class:^(kitty)$"
