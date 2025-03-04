@@ -163,5 +163,14 @@
   nix = {
     package = pkgs.nixVersions.stable;
     extraOptions = "experimental-features = nix-command flakes";
+
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      persistent = true;
+      options = "--delete-older-than 5d";
+    };
+
+    settings.auto-optimise-store = true;
   };
 }
