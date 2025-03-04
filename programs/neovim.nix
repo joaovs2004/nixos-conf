@@ -10,9 +10,11 @@
       lua
       gcc
       gnumake
-      unstable.vtsls
+      vtsls
       vscode-langservers-extracted
       pyright
+      rust-analyzer
+      cargo
     ];
 
     hm-activation = true;
@@ -63,7 +65,7 @@
       local capabilities = require("nvchad.configs.lspconfig").capabilities
 
       local lspconfig = require "lspconfig"
-      local servers = { "html", "cssls", "vtsls", "pyright"}
+      local servers = { "html", "cssls", "vtsls", "pyright", "rust_analyzer"}
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
