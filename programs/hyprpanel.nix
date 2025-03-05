@@ -11,6 +11,7 @@
           left = [ "dashboard" "workspaces" ];
           middle = [ ];
           right = [
+            "media"
             "volume"
             "kbinput"
             "network"
@@ -27,6 +28,7 @@
       bar.launcher.icon = "";
       bar.workspaces.show_numbered = true;
       bar.network.label = false;
+      bar.media.show_active_only = true;
 
       menus.clock = {
         time = {
