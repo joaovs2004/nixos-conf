@@ -24,7 +24,7 @@
   (
     pkgs.runCommand "edid.bin" { } ''
       mkdir -p $out/lib/firmware/edid
-      cp ${./hyprland/edid.bin} $out/lib/firmware/edid/edid.bin
+      cp ${./wms/edid.bin} $out/lib/firmware/edid/edid.bin
     ''
   )];
 
