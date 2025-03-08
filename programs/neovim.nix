@@ -15,6 +15,7 @@
       pyright
       rust-analyzer
       cargo
+      libclang
     ];
 
     hm-activation = true;
@@ -22,12 +23,6 @@
 
     extraPlugins = ''
       return {
-        {
-          "mateusrdc/dockerenv.nvim",
-          dependencies = { "neovim/nvim-lspconfig" },
-          cmd = "LoadDockerEnv",
-          opts = {}
-        },
         {
           "kdheepak/lazygit.nvim",
           lazy = true,
@@ -65,7 +60,7 @@
       local capabilities = require("nvchad.configs.lspconfig").capabilities
 
       local lspconfig = require "lspconfig"
-      local servers = { "html", "cssls", "vtsls", "pyright", "rust_analyzer"}
+      local servers = { "html", "cssls", "vtsls", "pyright", "rust_analyzer", "clangd"}
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {

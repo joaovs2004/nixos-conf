@@ -60,6 +60,8 @@
 
   # Configure keymap in X11
   services.xserver = {
+    enable = true;
+
     xkb = {
       layout = "us,us";
       variant = ",intl";
@@ -140,8 +142,7 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
 
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.ly.enable = true;
 
   services.pipewire = {
     enable = true; # if not already enabled

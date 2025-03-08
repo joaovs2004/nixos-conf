@@ -161,7 +161,6 @@
     ];
 
     windowrulev2 = [
-      "noborder, onworkspace:w[t1]"
       "opacity 0.90 0.90,class:^(code)$"
       "opacity 0.90 0.90,class:^(thunar)$"
       "opacity 0.90 0.90,class:^(kitty)$"

@@ -13,7 +13,7 @@
     ./programs/kitty.nix
     ./programs/neovim.nix
     ./programs/hyprpanel.nix
-    ./hyprland/conf.nix
+    ./wms/hyprland.nix
   ];
 
   fonts.fontconfig.enable = true;
