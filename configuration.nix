@@ -62,6 +62,15 @@
   services.xserver = {
     enable = true;
 
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        rofi
+        flameshot
+        feh
+      ];
+    };
+
     xkb = {
       layout = "us,us";
       variant = ",intl";

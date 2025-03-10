@@ -14,6 +14,7 @@
     ./programs/neovim.nix
     ./programs/hyprpanel.nix
     ./wms/hyprland.nix
+    ./wms/i3.nix
   ];
 
   fonts.fontconfig.enable = true;
