@@ -3,6 +3,10 @@
 let
   mod = "Mod4";
 in {
+  imports = [
+    ./picom.nix
+  ];
+
   xsession.windowManager.i3 = {
     enable = true;
 
@@ -16,7 +20,15 @@ in {
       window.titlebar = false;
       startup = [
           {
-            command = "exec xrandr --output HDMI-1 --mode 1920x1080 --rate 144 --scale 1x1";
+            command = "exec xrandr --output HDMI-A-0 --mode 1920x1080 --rate 144 --set TearFree off";
+            notification = false;
+          }
+          {
+            command = "exec xinput set-prop 9 'libinput Accel Profile Enabled' 0 1 0";
+            notification = false;
+          }
+          {
+            command = "exec autotiling";
             notification = false;
           }
           {
@@ -35,8 +47,9 @@ in {
       keybindings = lib.mkOptionDefault {
         "${mod}+t" = "exec ${pkgs.kitty}/bin/kitty";
         "${mod}+b" = "exec ${pkgs.brave}/bin/brave";
+        "${mod}+Shift+b" = "exec ${pkgs.brave}/bin/brave --incognito";
         "${mod}+e" = "exec thunar";
-        "${mod}" = "exec ${pkgs.rofi}/bin/rofi -show drun";
+        "Super_L --release" = "exec ${pkgs.rofi}/bin/rofi -show drun";
 
         "${mod}+q" = "kill";
         "${mod}+Shift+r" = "exec restart";

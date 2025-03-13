@@ -17,6 +17,7 @@
   boot.loader.grub.useOSProber = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
   # Edid modified to use correct pixel format in AMD, see more on https://www.wezm.net/v2/posts/2020/linux-amdgpu-pixel-format/
   boot.kernelParams = [ "drm.edid_firmware=HDMI-A-1:edid/edid.bin" "video=HDMI-A-1" ];
@@ -68,8 +69,12 @@
         rofi
         flameshot
         feh
+        autotiling
       ];
     };
+
+    enableTearFree = true;
+    videoDrivers = ["amdgpu" "modesetting"];
 
     xkb = {
       layout = "us,us";
@@ -153,7 +158,7 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
 
-  services.displayManager.ly.enable = true;
+  services.displayManager.sddm.enable = true;
 
   services.pipewire = {
     enable = true; # if not already enabled
