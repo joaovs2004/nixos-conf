@@ -72,7 +72,7 @@ in {
       ];
       startup = [
           {
-            command = "exec xrandr --output HDMI-A-0 --mode 1920x1080 --rate 144";
+            command = "exec ~/flake/wms/xrandr";
             notification = false;
           }
           {

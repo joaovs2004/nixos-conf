@@ -1,0 +1,4 @@
+#!/etc/profiles/per-user/jvs/bin/zsh
+
+xrandr --output HDMI-A-0 --mode 1920x1080 --rate 144
+xrandr
