@@ -15,7 +15,7 @@
       pyright
       rust-analyzer
       cargo
-      libclang
+      clang-tools
     ];
 
     hm-activation = true;
