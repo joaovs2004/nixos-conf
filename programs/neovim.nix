@@ -5,7 +5,6 @@
     enable = true;
 
     extraPackages = with pkgs; [
-      wl-clipboard
       ripgrep
       lua
       gcc

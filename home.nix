@@ -20,6 +20,8 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
+    wl-clipboard
+    xdg-utils
     fira-code
     fira-code-nerdfont
     noto-fonts
