@@ -3,27 +3,26 @@
 {
   programs.hyprpanel = {
     enable = true;
-    theme = "monochrome";
-
-    layout = {
-      "bar.layouts" = {
-        "0" = {
-          left = [ "dashboard" "workspaces" ];
-          middle = [ ];
-          right = [
-            "media"
-            "volume"
-            "kbinput"
-            "network"
-            "systray"
-            "clock"
-            "notifications"
-          ];
-        };
-      };
-    };
 
     settings = {
+      layout = {
+        "bar.layouts" = {
+          "0" = {
+            left = [ "dashboard" "workspaces" ];
+            middle = [ ];
+            right = [
+              "media"
+                "volume"
+                "kbinput"
+                "network"
+                "systray"
+                "clock"
+                "notifications"
+            ];
+          };
+        };
+      };
+
       bar.clock.format = "%a %b %d  %H:%M";
       bar.launcher.icon = "";
       bar.workspaces.show_numbered = true;
@@ -38,6 +37,7 @@
         weather.unit = "metric";
       };
 
+      theme.name = "monochrome";
       theme.bar.scaling = 95;
       theme.bar.outer_spacing = "0.1em";
       theme.bar.buttons.y_margins = "0.1em";
