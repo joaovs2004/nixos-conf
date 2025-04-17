@@ -15,6 +15,7 @@
       rust-analyzer
       cargo
       clang-tools
+      gopls
     ];
 
     hm-activation = true;
@@ -59,7 +60,7 @@
       local capabilities = require("nvchad.configs.lspconfig").capabilities
 
       local lspconfig = require "lspconfig"
-      local servers = { "html", "cssls", "vtsls", "pyright", "rust_analyzer", "clangd"}
+      local servers = { "html", "cssls", "vtsls", "pyright", "rust_analyzer", "clangd", "gopls"}
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
