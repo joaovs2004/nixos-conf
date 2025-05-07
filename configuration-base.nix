@@ -5,11 +5,6 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = false;
   boot.loader.grub.enable = true;
@@ -18,16 +13,6 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.kernelModules = [ "amdgpu" ];
-
-  # Edid modified to use correct pixel format in AMD, see more on https://www.wezm.net/v2/posts/2020/linux-amdgpu-pixel-format/
-  boot.kernelParams = [ "drm.edid_firmware=HDMI-A-1:edid/edid.bin" "video=HDMI-A-1" ];
-  hardware.firmware = [
-  (
-    pkgs.runCommand "edid.bin" { } ''
-      mkdir -p $out/lib/firmware/edid
-      cp ${./wms/edid.bin} $out/lib/firmware/edid/edid.bin
-    ''
-  )];
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
@@ -59,11 +44,8 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver = {
-    enable = true;
-
-    windowManager.i3 = {
+  services.xserver.enable = true;
+  services.xserver.windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
         rofi
@@ -71,20 +53,7 @@
         feh
         autotiling
       ];
-    };
-
-    enableTearFree = true;
-    videoDrivers = ["amdgpu" "modesetting"];
-
-    xkb = {
-      layout = "us,us";
-      variant = ",intl";
-      options = "grp:win_space_toggle";
-    };
   };
-
-  # Configure console keymap
-  console.keyMap = "us-acentos";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jvs = {
@@ -142,7 +111,8 @@
   programs.zsh.enable = true;
   programs.zsh.shellAliases = {
     dev = "nix-shell ~/flake/dev-shell.nix";
-    rebuild = "sudo nixos-rebuild switch --flake .#jvs";
+    rebuild-pc = "sudo nixos-rebuild switch --flake .#jvs-pc";
+    rebuild-notebook = "sudo nixos-rebuild switch --flake .#jvs-notebook";
   };
   programs.thunar.enable = true;
   programs.xfconf.enable = true;

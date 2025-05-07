@@ -39,31 +39,41 @@
       };
 
       lib = nixpkgs.lib;
+
+      commonModules = [
+        {nixpkgs.overlays = [
+            overlay-unstable
+            hyprpanel.overlay
+          ];
+        }
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.jvs = {
+            imports = [
+              nvchad4nix.homeManagerModule
+              hyprpanel.homeManagerModules.hyprpanel
+              ./home.nix
+            ];
+          };
+        }
+      ]
     in {
 	    nixosConfigurations = {
-		    jvs = lib.nixosSystem {
+		    jvs-pc = lib.nixosSystem {
 			    inherit system;
 
-			    modules = [
-            {nixpkgs.overlays = [
-                overlay-unstable
-                hyprpanel.overlay
-              ];
-            }
-				    ./configuration.nix
-				    home-manager.nixosModules.home-manager {
-					    home-manager.useGlobalPkgs = true;
-					    home-manager.useUserPackages = true;
-					    home-manager.users.jvs = {
-						    imports = [
-                  nvchad4nix.homeManagerModule
-                  hyprpanel.homeManagerModules.hyprpanel
-							    ./home.nix
-						    ];
-					    };
-				    }
+			    modules = commonModules ++ [
+				    ./configurations/configuration-pc.nix
 			    ];
 		    };
+        jvs-notebook = lib.nixosSystem {
+          inherit system;
+
+			    modules = commonModules ++ [
+            ./configurations/configuration-notebook.nix
+			    ];
+        };
 		};
 	};
 }

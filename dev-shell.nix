@@ -13,6 +13,9 @@
     libudev-zero
     libxkbcommon
     vulkan-loader
+    libcs50
+    clang-tools
+    go
   ]) ++ (with pkgs.xorg; [
     libX11
     libXcursor
