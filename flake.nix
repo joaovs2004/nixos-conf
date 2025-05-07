@@ -57,7 +57,7 @@
             ];
           };
         }
-      ]
+      ];
     in {
 	    nixosConfigurations = {
 		    jvs-pc = lib.nixosSystem {
