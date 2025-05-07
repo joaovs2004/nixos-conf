@@ -110,6 +110,15 @@
     distrobox
   ];
 
+  fonts.packages = with pkgs; [
+    fira-code
+    fira-code-nerdfont
+    noto-fonts
+    noto-fonts-emoji
+    corefonts
+    vistafonts
+  ];
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = 1;
   };

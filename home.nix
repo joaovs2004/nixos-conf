@@ -22,12 +22,6 @@
   home.packages = with pkgs; [
     wl-clipboard
     xdg-utils
-    fira-code
-    fira-code-nerdfont
-    noto-fonts
-    noto-fonts-emoji
-    corefonts
-    vistafonts
     tela-icon-theme
     gnome-text-editor
     insomnia
@@ -45,6 +39,7 @@
     btop
     vlc
     loupe
+    zed-editor
   ];
 
   programs.zoxide = {
