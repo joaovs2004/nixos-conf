@@ -45,7 +45,7 @@
     general = {
       gaps_in = 2;
       gaps_out = 5;
-      border_size = 1;
+      border_size = if hostName == "nixos-pc" then 1 else 3;
       "col.active_border" = "rgb(393939)";
       "col.inactive_border" = "rgb(191919)";
       layout = "dwindle";
@@ -53,7 +53,7 @@
     };
 
     group = {
-      "col.border_active" = "rgb(393939)";
+      "col.border_active" = if hostName == "nixos-pc" then "rgb(393939)" else "rgb(4c4c4c)";
       "col.border_inactive" = "rgb(191919)";
 
       groupbar = {
