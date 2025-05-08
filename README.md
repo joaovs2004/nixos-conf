@@ -12,12 +12,19 @@ This is my NixOS configuration, set up to run with the Hyprland window manager. 
    ```
 2. The first time I rebuild the system, I need to run:
    ```bash
-   sudo nixos-rebuild  switch --flake .#jvs
+   # To build for my pc
+   sudo nixos-rebuild switch --flake .#jvs-pc
+
+   # To build for my laptop
+   sudo nixos-rebuild switch --flake .#jvs-notebook
    ```
 3. After the first rebuild, The alias rebuild is avaible.
     ```bash
-    # runs sudo nixos-rebuild  switch --flake .#jvs
-   rebuild
+    # runs sudo nixos-rebuild switch --flake .#jvs-pc
+    rebuild-pc
+
+    # runs sudo nixos-rebuild switch --flake .#jvs-pc
+    rebuild-notebook
    ```
 4. I develop using nix-shell, to activate nix-shell I use the alias dev
     ```bash
