@@ -23,7 +23,7 @@ This is my NixOS configuration, set up to run with the Hyprland window manager. 
     # runs sudo nixos-rebuild switch --flake .#jvs-pc
     rebuild-pc
 
-    # runs sudo nixos-rebuild switch --flake .#jvs-pc
+    # runs sudo nixos-rebuild switch --flake .#jvs-notebook
     rebuild-notebook
    ```
 4. I develop using nix-shell, to activate nix-shell I use the alias dev
