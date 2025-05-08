@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostName, ... }:
 
 {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
-    "monitor" = "HDMI-A-1,1920x1080@144,0x0,1";
+    "monitor" = if hostName == "nixos-pc" then "HDMI-A-1,1920x1080@144,0x0,1" else "eDP-1,1920x1080@60,0x0,1";
 
     "env" = [
       "QT_QPA_PLATFORM,wayland"
@@ -32,8 +32,8 @@
     "$browser" = "brave --ozone-platform-hint=auto";
 
     input = {
-      kb_layout = "us,us";
-      kb_variant = ",intl";
+      kb_layout = if hostName == "nixos-pc" then "us,us" else "br";
+      kb_variant = if hostName == "nixos-pc" then ",intl" else "abnt2";
       kb_options = "grp:win_space_toggle";
       follow_mouse = 1;
       sensitivity = -0.5;

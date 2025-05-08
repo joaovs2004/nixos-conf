@@ -7,6 +7,8 @@
       ../configuration-base.nix
     ];
 
+  networking.hostName = "nixos-pc"; # Define your hostname.
+
   # Edid modified to use correct pixel format in AMD, see more on https://www.wezm.net/v2/posts/2020/linux-amdgpu-pixel-format/
   boot.kernelParams = [ "drm.edid_firmware=HDMI-A-1:edid/edid.bin" "video=HDMI-A-1" ];
   hardware.firmware = [

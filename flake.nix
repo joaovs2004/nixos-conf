@@ -60,18 +60,27 @@
       ];
     in {
 	    nixosConfigurations = {
-		    jvs-pc = lib.nixosSystem {
+		    jvs-pc = lib.nixosSystem rec {
 			    inherit system;
+
+          specialArgs = {
+            hostName = "nixos-pc";
+          };
 
 			    modules = commonModules ++ [
 				    ./configurations/configuration-pc.nix
+            { home-manager.extraSpecialArgs = specialArgs; }
 			    ];
 		    };
-        jvs-notebook = lib.nixosSystem {
+        jvs-notebook = lib.nixosSystem rec {
           inherit system;
+          specialArgs = {
+            hostName = "nixos-notebook";
+          };
 
 			    modules = commonModules ++ [
             ./configurations/configuration-notebook.nix
+            { home-manager.extraSpecialArgs = specialArgs; }
 			    ];
         };
 		};

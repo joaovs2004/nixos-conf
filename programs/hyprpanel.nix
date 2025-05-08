@@ -1,5 +1,26 @@
-{config, pkgs, ...}:
+{config, pkgs, hostName, ...}:
 
+let 
+  layoutPc = [
+    "media"
+    "volume"
+    "kbinput"
+    "network"
+    "systray"
+    "clock"
+    "notifications"
+  ];
+  layoutNotebook = [
+    "media"
+    "volume"
+    "bluetooth"
+    "battery"
+    "network"
+    "systray"
+    "clock"
+    "notifications"
+  ];
+in
 {
   programs.hyprpanel = {
     enable = true;
@@ -10,16 +31,8 @@
           "0" = {
             left = [ "dashboard" "workspaces" ];
             middle = [ ];
-            right = [
-              "media"
-                "volume"
-                "kbinput"
-                "network"
-                "systray"
-                "clock"
-                "notifications"
-            ];
-          };
+            right = if hostName == "nixos-pc" then layoutPc else layoutNotebook;
+            };
         };
       };
 
