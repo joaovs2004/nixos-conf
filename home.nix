@@ -94,5 +94,9 @@
       source = ./programs/Kvantum;
       recursive = true;
     };
+    "/home/jvs/.local/share/fonts" = {
+      source = ./fonts;
+      recursive = true;
+    };
   };
 }
