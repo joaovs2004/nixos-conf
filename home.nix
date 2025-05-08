@@ -40,6 +40,7 @@
     vlc
     loupe
     zed-editor
+    beekeeper-studio
   ];
 
   programs.zoxide = {
