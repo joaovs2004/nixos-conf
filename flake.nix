@@ -69,7 +69,7 @@
 
 			    modules = commonModules ++ [
 				    ./configurations/configuration-pc.nix
-            { home-manager.extraSpecialArgs = specialArgs; }
+            { home-manager.extraSpecialArgs = specialArgs; home-manager.backupFileExtension = "backup"; }
 			    ];
 		    };
         jvs-notebook = lib.nixosSystem rec {
@@ -80,7 +80,7 @@
 
 			    modules = commonModules ++ [
             ./configurations/configuration-notebook.nix
-            { home-manager.extraSpecialArgs = specialArgs; }
+            { home-manager.extraSpecialArgs = specialArgs; home-manager.backupFileExtension = "backup"; }
 			    ];
         };
 		};
