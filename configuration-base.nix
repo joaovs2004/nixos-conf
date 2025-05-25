@@ -80,7 +80,7 @@
 
   fonts.packages = with pkgs; [
     fira-code
-    fira-code-nerdfont
+    nerd-fonts.fira-code
     noto-fonts
     noto-fonts-emoji
     corefonts
@@ -152,7 +152,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 
   nix = {
     package = pkgs.nixVersions.stable;

@@ -4,7 +4,7 @@
   home.username = "jvs";
   home.homeDirectory = "/home/jvs";
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 
   imports = [
@@ -40,7 +40,8 @@
     vlc
     loupe
     zed-editor
-    beekeeper-studio
+    fira-code
+    nerd-fonts.fira-code
   ];
 
   programs.zoxide = {
