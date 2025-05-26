@@ -59,6 +59,9 @@
       groupbar = {
         "col.active" = "rgb(4c4c4c)";
         "col.inactive" = "rgb(262626)";
+        "gradients" = true;
+        "gaps_in" = 0;
+        "gaps_out" = 1;
       };
     };
 
