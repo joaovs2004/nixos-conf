@@ -14,13 +14,9 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprpanel = {
-      url = "github:jas-singhfsu/hyprpanel";
-    };
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, hyprpanel, nixpkgs-unstable, nvchad4nix, ... }:
+  outputs = inputs @ { nixpkgs, home-manager, nixpkgs-unstable, nvchad4nix, ... }:
     let
       system = "x86_64-linux";
 
@@ -43,7 +39,6 @@
       commonModules = [
         {nixpkgs.overlays = [
             overlay-unstable
-            hyprpanel.overlay
           ];
         }
         home-manager.nixosModules.home-manager {
@@ -52,7 +47,6 @@
           home-manager.users.jvs = {
             imports = [
               nvchad4nix.homeManagerModule
-              hyprpanel.homeManagerModules.hyprpanel
               ./home.nix
             ];
           };
