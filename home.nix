@@ -41,7 +41,10 @@
     loupe
     zed-editor
     fira-code
+    nerd-fonts.zed-mono
     nerd-fonts.fira-code
+    alsa-utils
+    jetbrains.idea-ultimate
   ];
 
   programs.zoxide = {
